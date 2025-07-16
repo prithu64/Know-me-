@@ -1,1 +1,41 @@
+14/07/25
 # done with the home page : made context provider for the user name so that the user name can be made available to different pages 
+
+
+15/07/25 
+# done with the question card 
+# added map function on the card component that takes quiz data as props
+# also added a handlenext function to keeps track of the index value and increment the index value on clicking the next button to get next question
+
+GOALS : 1# user clicks option , the option turns yellow theme  (DONE)
+        2# when user clicks submit button , if correct option , then turn yellow theme to green theme (having issue with carrying the correct state)
+        3# if  user clicks wrong option and submits answer , then turn yellow theme to red and turn the right option to green theme (having issue)
+
+16/07/25
+# goal 1 ,2 ,3 -> [DONE]
+
+  #NOTE -->   {options.map((option,index)=>{
+
+                 const isSelected = OptionbuttonIndex === index;         //we can conditions like this to in variables 
+                 const isCorrect = option === answer;                    // like this easier to use in if else conditions
+
+                 let btnCls = "border w-[330px] h-[50px] m-1 cursor-pointer"  //define a btn class like this , much easier to implement with conditions
+
+                 if(isSelected && submitStatus){
+                    btnCls += isCorrect?" border-2 bg-green-200 text-green-700 border-green-900":" bg-red-200 text-red-700 border-2 border-red-900"  //condition checks can be added to btnclass with += operators
+                 }else if(isSelected && !submitStatus){
+                  btnCls+=" bg-yellow-200 border-2 text-yellow-700 border-yellow-900"
+                 }else if(isCorrect && submitStatus){
+                    btnCls+=" border-2 bg-green-200 text-green-700 border-green-900"
+                 }              
+                //option buttons
+              return <button 
+              disabled = {Lock}
+               onClick={()=>{
+               HandleOptionClick(index) }}
+                key={index} 
+                className={btnCls}   //just replace the button class variable name 
+                >
+                    {option}
+                </button>
+                })}

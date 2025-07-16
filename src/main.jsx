@@ -7,6 +7,7 @@ import QuizPage from './pages/QuizPage.jsx'
 import Profile from './pages/Profile.jsx'
 import PlayerContext from './context/PlayerContext.js'
 import PlayerContextProvider from './context/PlayerContextProvider.jsx'
+import ResultScreen from './components/ResultScreen.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path : '/profile',
     element : <Profile/>
+  },
+   {
+    path : '/result',
+    element : <ResultScreen/>
   }
 ])
 

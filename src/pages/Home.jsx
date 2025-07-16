@@ -27,7 +27,7 @@ function Home() {
           <p className="text-sm mb-4">take a small quiz, let's see if you can figure me out </p>
           <div className="mb-5">
                       <h1 className="mb-1 text-sm">Enter your name to begin</h1>
-                     <input type="text"  placeholder="name" className="border border-2  px-2 py-1 rounded-md outline-none" 
+                     <input type="text"  placeholder="name" className="border-2 px-2 py-1 rounded-md outline-none" 
                           value={user}
                           onChange={
                           (e)=>{                           //if the name is of length 3 or more then only the 

@@ -21,7 +21,7 @@ function Home() {
   }
 
   return (
-    <div className='flex justify-center items-center h-screen text-center '>
+    <div className='flex justify-center items-center h-screen text-center px-2 '>
        <div className="border-2 p-4 sm:p-6 rounded-md bg-white/15 backdrop-blur-none z-5">
           <h1 className="text-2xl mb-4 md:text-6xl"><i>DO YOU EVEN KNOW ME?</i></h1>
           <p className="text-xl mb-4">take a small quiz, let's see if you can figure me out </p>

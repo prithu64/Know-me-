@@ -21,12 +21,12 @@ function Home() {
   }
 
   return (
-    <div className='flex justify-center items-center h-screen  text-center '>
-       <div className="border-1 p-4 sm:p-6">
-          <h1 className="text-2xl mb-4 md:text-3xl"><i>DO YOU EVEN KNOW ME?</i></h1>
-          <p className="text-sm mb-4">take a small quiz, let's see if you can figure me out </p>
+    <div className='flex justify-center items-center h-screen text-center '>
+       <div className="border-2 p-4 sm:p-6 rounded-md bg-white/15 backdrop-blur-none z-5">
+          <h1 className="text-2xl mb-4 md:text-6xl"><i>DO YOU EVEN KNOW ME?</i></h1>
+          <p className="text-xl mb-4">take a small quiz, let's see if you can figure me out </p>
           <div className="mb-5">
-                      <h1 className="mb-1 text-sm">Enter your name to begin</h1>
+                      <h1 className="mb-1 text-xl">Enter your name to begin</h1>
                      <input type="text"  placeholder="name" className="border-2 px-2 py-1 rounded-md outline-none" 
                           value={user}
                           onChange={
@@ -42,7 +42,7 @@ function Home() {
                      } />
            </div>
            <button 
-             className={`border px-3 py-1 rounded-md ${isDisabled?"cursor-not-allowed opacity-50" :" cursor-pointer "} `} 
+             className={`border px-8 py-1 rounded-md ${isDisabled?"cursor-not-allowed opacity-50" :" cursor-pointer "} `} 
              disabled={isDisabled} 
              onClick={handleSubmit}>
               Begin

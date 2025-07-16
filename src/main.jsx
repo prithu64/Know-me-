@@ -31,8 +31,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <div className='bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white'>
     <PlayerContextProvider>
       <RouterProvider router={router}/>
     </PlayerContextProvider>
+    </div>
   </StrictMode>
 )

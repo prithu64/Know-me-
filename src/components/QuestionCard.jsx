@@ -5,7 +5,7 @@ import PlayerContext from "../context/PlayerContext"
 function QuestionCard({id,question,options,handleNext,answer}) {
    
   const [OptionbuttonIndex,setOptionButtonIndex] = useState(null)  
-  const {score,setScore} = useContext(PlayerContext)
+  const {setScore} = useContext(PlayerContext)
   const [submitStatus,setsubmitStatus] = useState(false)
   const [Lock,setLock] = useState(false)
 
@@ -38,7 +38,7 @@ useEffect(()=>{
         <div>
         
           {/*Question div */}
-            <h1 className="text-2xl text-center"> {id}. {question} </h1>
+            <h1 className="text-3xl md:text-4xl text-center"> {id}. {question} </h1>
         </div>
 
         <div className="grid justify-center ">
@@ -48,14 +48,14 @@ useEffect(()=>{
                  const isSelected = OptionbuttonIndex === index;
                  const isCorrect = option === answer;
 
-                 let btnCls = "border w-[330px] h-[50px] m-1 "  //define a btn class like this , much easier to implement with conditions
+                 let btnCls = "border w-[330px] h-[50px] m-1 rounded-sm outline-none "  //define a btn class like this , much easier to implement with conditions
 
                  if(isSelected && submitStatus){
-                    btnCls += isCorrect?" border-2 bg-green-200 text-green-700 border-green-900":" bg-red-200 text-red-700 border-2 border-red-900"
+                    btnCls += isCorrect?" border-3 font-bold bg-green-100 text-green-700 border-green-900 ":" font-bold bg-red-100 text-red-700 border-3 border-red-900 "
                  }else if(isSelected && !submitStatus){
-                  btnCls+=" bg-yellow-200 border-2 text-yellow-700 border-yellow-900"
+                  btnCls+="border-3 font-bold border-yellow-600 bg-yellow-100 text-black "
                  }else if(isCorrect && submitStatus){
-                    btnCls+=" border-2 bg-green-200 text-green-700 border-green-900"
+                    btnCls+="border-3 font-bold bg-green-100 text-green-700 border-green-900 "
                  }              
                 //option buttons
               return <button 
@@ -63,7 +63,7 @@ useEffect(()=>{
                onClick={()=>{
                HandleOptionClick(index) }}
                 key={index} 
-                className={btnCls += Lock ? "cursor-not-allowed":"cursor-pointer"} //if lock->true , no more chance to choose opitons , final submit already happend
+                className={btnCls += Lock ? "cursor-not-allowed":"cursor-pointer "} //if lock->true , no more chance to choose opitons , final submit already happend
                 >
                     {option}
                 </button>})}
@@ -71,8 +71,8 @@ useEffect(()=>{
 
         <div className="flex mx-auto">
             {/*Button div */}
-            <button className="border w-[130px] h-[40px] m-1 cursor-pointer " onClick={toggleSubmit}>Submit</button>
-            <button disabled={!Lock} className={`border w-[130px] h-[40px] m-1 ${submitStatus ? "cursor-pointer":"cursor-not-allowed"}`}  onClick={handleNext} >Next</button>
+            <button className="border w-[130px] h-[40px] m-1 cursor-pointer rounded-sm " onClick={toggleSubmit}>Submit</button>
+            <button disabled={!Lock} className={`border w-[130px] h-[40px] rounded-sm m-1 ${submitStatus ? "cursor-pointer":"cursor-not-allowed"}`}  onClick={handleNext} >Next</button>
         </div>
      </div>
 </div>
